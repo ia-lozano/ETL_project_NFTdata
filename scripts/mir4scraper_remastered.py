@@ -107,7 +107,7 @@ def nft_list_extractor(website: str) -> pd.DataFrame:
     end_time = time.time()
     # Give us time to watch the scraped window
     time.sleep(20)
-    print(f'Scraping finished in {end_time - start_time}:.4f')
+    print(f'Scraping finished in {end_time - start_time:.4f}')
 
     return df
 
@@ -121,7 +121,7 @@ def generate_nft_csv(data: pd.DataFrame):
         Output:
         - No output, the function creates the csv file only
     '''
-    data.to_csv(f'nft_list_{datetime.now().strftime("%Y-%m-%d")}.csv', index=False)
+    data.to_csv(f'raw/nftlist_{datetime.now().strftime("%Y-%m-%d")}.csv', index=False)
     print(f'csv file created:\n {data.head()}')
 
 def main():
